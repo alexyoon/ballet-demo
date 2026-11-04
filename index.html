@@ -35,7 +35,7 @@ nav a:hover{background:var(--blush);color:var(--ink)}
 .hero .btns{display:flex;gap:10px;flex-wrap:wrap}
 .ghost{background:none;border:1px solid var(--ink);border-radius:99px;padding:10px 18px;font-weight:600;font-size:14px}
 .art{position:relative;aspect-ratio:4/5;border-radius:220px 220px 24px 24px;background:radial-gradient(120% 80% at 50% 10%,#fff 0,#f6e6e1 40%,#e9cbc5 100%);box-shadow:0 30px 60px -30px rgba(120,60,60,.35);display:grid;place-items:end center;overflow:hidden}
-.art svg{width:78%;margin-bottom:-2px}
+.art svg{width:82%;margin-bottom:4%}
 .art .badge{position:absolute;top:24px;left:50%;transform:translateX(-50%);background:var(--paper);border-radius:99px;padding:6px 14px;font-size:12.5px;color:var(--rose-d);box-shadow:0 6px 18px rgba(0,0,0,.06);white-space:nowrap}
 .stats{display:flex;gap:28px;margin-top:30px}
 .stats b{display:block;font-family:var(--serif);font-size:34px;font-weight:600;line-height:1}
@@ -154,18 +154,52 @@ footer{border-top:1px solid var(--line);padding:30px 0 90px;color:var(--ink3);fo
   </div>
   <div class="art"><span class="badge">이번 주 체험 수업 3자리 남음</span>
     <svg viewBox="0 0 300 380" fill="none" aria-hidden="true">
-      <ellipse cx="150" cy="372" rx="110" ry="8" fill="#d9b2ac" opacity=".5"/>
-      <g stroke="#2a2224" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="150" cy="70" r="20" fill="#2a2224"/>
-        <circle cx="150" cy="44" r="9" fill="#2a2224"/>
-        <path d="M150 92 L150 190"/>
-        <path d="M150 112 C120 96 96 70 92 40"/>
-        <path d="M150 112 C180 96 204 70 208 40"/>
-        <path d="M150 190 L150 300 L150 360"/>
-        <path d="M150 192 C185 200 228 214 262 236"/>
+      <defs>
+        <linearGradient id="satin" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#e7aea6"/><stop offset=".45" stop-color="#f8dcd6"/><stop offset=".7" stop-color="#f1c3bb"/><stop offset="1" stop-color="#d9958d"/>
+        </linearGradient>
+        <linearGradient id="rib" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#e9b3ab"/><stop offset="1" stop-color="#d79a92"/>
+        </linearGradient>
+      </defs>
+      <!-- barre -->
+      <rect x="20" y="34" width="260" height="8" rx="4" fill="#c9a48f"/>
+      <rect x="20" y="34" width="260" height="3" rx="1.5" fill="#e3c6b4"/>
+      <!-- ribbons -->
+      <g stroke="url(#rib)" stroke-width="7" stroke-linecap="round" fill="none">
+        <path d="M128 40 C116 90 124 140 104 196"/>
+        <path d="M136 40 C148 92 134 150 142 190"/>
+        <path d="M170 40 C160 100 178 160 172 208"/>
+        <path d="M178 40 C200 96 196 160 214 204"/>
       </g>
-      <path d="M150 168 C112 186 92 206 82 228 C120 222 182 222 218 228 C208 206 188 186 150 168Z" fill="#f2c9c3" stroke="#c98b86" stroke-width="2"/>
-      <path d="M92 228 C122 236 178 236 208 228" stroke="#c98b86" stroke-width="2" fill="none"/>
+      <!-- bow -->
+      <g fill="#dca098">
+        <path d="M153 40 C138 26 128 34 133 44 C138 52 148 46 153 40Z"/>
+        <path d="M153 40 C168 26 178 34 173 44 C168 52 158 46 153 40Z"/>
+        <circle cx="153" cy="41" r="4.5" fill="#c9857d"/>
+      </g>
+      <!-- left shoe (toe down) -->
+      <g transform="translate(-10 0) rotate(10 128 260)">
+        <path d="M104 190 C96 230 100 290 116 336 C121 350 135 350 140 336 C156 290 160 230 152 190 C142 182 114 182 104 190Z" fill="url(#satin)"/>
+        <path d="M108 194 C118 206 138 206 148 194 C146 220 110 220 108 194Z" fill="#b97a73" opacity=".55"/>
+        <path d="M106 190 C116 198 140 198 150 190" stroke="#c98b86" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M128 222 C126 260 124 300 126 338" stroke="#fff" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"/>
+        <path d="M113 326 C122 334 134 334 143 326" stroke="#c98b86" stroke-width="1.6" stroke-dasharray="2 3"/>
+      </g>
+      <!-- right shoe -->
+      <g transform="translate(14 0) rotate(-8 172 270)">
+        <path d="M146 204 C138 244 142 304 158 350 C163 364 177 364 182 350 C198 304 202 244 194 204 C184 196 156 196 146 204Z" fill="url(#satin)"/>
+        <path d="M150 208 C160 220 180 220 190 208 C188 234 152 234 150 208Z" fill="#b97a73" opacity=".55"/>
+        <path d="M148 204 C158 212 182 212 192 204" stroke="#c98b86" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M170 236 C168 274 166 314 168 352" stroke="#fff" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"/>
+        <path d="M155 340 C164 348 176 348 185 340" stroke="#c98b86" stroke-width="1.6" stroke-dasharray="2 3"/>
+      </g>
+      <!-- sparkles -->
+      <g fill="#fff">
+        <path d="M64 120 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3z"/>
+        <path d="M238 160 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z"/>
+        <path d="M226 290 l2.5 7 7 2.5 -7 2.5 -2.5 7 -2.5 -7 -7 -2.5 7 -2.5z" opacity=".8"/>
+      </g>
     </svg>
   </div>
 </div></section>
